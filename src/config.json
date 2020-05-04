@@ -1,0 +1,10 @@
+{
+    "port": 4266,
+    "host": "0.0.0.0",
+    "languages": {
+        "js": "./langs/js/main.js"
+    },
+    "docker_path": "/var/run/docker.sock",
+    "prefix": "code-runner-",
+    "timeout": "5000"
+}
