@@ -1,7 +1,0 @@
-enum Language {
-    js
-}
-
-type Query {
-    run(code: String!, lang: Language!): String!
-}

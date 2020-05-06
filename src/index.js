@@ -1,25 +1,36 @@
 const { ApolloServer, gql } = require('apollo-server');
-const fs = require('fs')
-const typedefs = gql`${fs.readFileSync("./typedefs.gql")}`
+const Bind = require('./Bind.js')
 
-const config = require('./config.json')
+const config = require('../config.json')
 
-const runners = {}
+const typeDefs = gql`
 
-for(const [lang, runner] of config.languages) {
-    runners[lang] = require(runner)
+enum Language {
+    ${Object.keys(config.languages)}
 }
-console.log(`=> Loaded config`);
 
+type Query {
+    run(code: String!, lang: Language!): String!
+}
+
+`
+
+const binds = new Map()
+
+for(const [lang, params] of Object.entries(config.languages)) {
+    binds.set(lang, new Bind(config, params))
+}
+
+console.log(`=> Loaded config`);
 const resolvers = {
     Query: {
         async run(parent, args, context, info) {
-            const {language, code} = args
+            const {lang, code} = args
 
-            const runner = runners[language]
-            if(!runner) return new Error('Language is not specified in config.')
+            const bind = binds.get(lang)
+            if(!bind) return new Error('Language is not specified in config.')
 
-            return await runner(code)
+            return await bind.run(code)
         }
     }
 }
