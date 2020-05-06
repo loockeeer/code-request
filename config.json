@@ -14,8 +14,8 @@
     "directory": "/home/lucas/Programmation/JavaScript/prog_api",
     "container": {
         "limits": {
-            "ram": "",
-            "cpu": 0
+            "ram": false,
+            "cpu": false
         },
         "permissions": {
             "network": false
