@@ -3,14 +3,22 @@
     "host": "0.0.0.0",
     "languages": {
         "js": {
-            "image": "node:current-alpine",
+            "image": "docker_api_code_runner-js",
             "filename": "prog.js",
             "commands": [
                 "node prog.js"
             ]
         }
     },
-    "docker_path": "/var/run/docker.sock",
     "timeout": "500000",
-    "directory": "/home/lucas/Programmation/JavaScript/prog_api"
+    "directory": "/home/lucas/Programmation/JavaScript/prog_api",
+    "container": {
+        "limits": {
+            "ram": "",
+            "cpu": 0
+        },
+        "permissions": {
+            "network": false
+        }
+    }
 }
