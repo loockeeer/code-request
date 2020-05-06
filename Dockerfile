@@ -12,6 +12,6 @@ RUN service docker start
 
 RUN npm install
 
-RUN node src/dockerfiles/init.js
+RUN npm run build
 
-CMD ["node", "src/index.js"]
+CMD ["npm", "run", "start"]

@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "apollo-server": "^2.13.0"
+},
+    "scripts": {
+        "start": "node src/index.js",
+        "build": "node src/dockerfiles/init.js"
+    }
+}
