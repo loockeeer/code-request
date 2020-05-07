@@ -1,4 +1,5 @@
 const RunnerManager = require('./RunnerManager.js')
+
 module.exports = class Bind {
         constructor(config, self) {
             this.config = config
