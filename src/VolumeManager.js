@@ -6,13 +6,13 @@ module.exports = class VolumeManager {
         this.code = code
     }
     async createFolder() {
-        await fs.mkdir('run/'+this.id)
-        await fs.writeFile('run/'+this.id+'/'+this.filename, this.code)
+        await fs.mkdir(__dirname+'/run/'+this.id)
+        await fs.writeFile(__dirname+'/run/'+this.id+'/'+this.filename, this.code)
     }
     async removeFolder() {
-        await fs.rmdir('run/'+this.id, {recursive: true})
+        await fs.rmdir(__dirname+'/run/'+this.id, {recursive: true})
     }
     get folder() {
-        return 'run/'+this.id
+        return __dirname+'/run/'+this.id
     }
 }
