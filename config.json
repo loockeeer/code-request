@@ -19,11 +19,11 @@
     "timeout": "500000",
     "container": {
         "limits": {
-            "ram": false,
-            "cpu": false
+            "memory": "300m",
+            "cpu": 10
         },
         "permissions": {
-            "network": false
+            "network": true
         }
     }
 }
