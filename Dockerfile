@@ -1,8 +1,8 @@
 FROM node:current-alpine
 
-COPY . /usr/src/app
+COPY . /usr/src/app/
 
-WORKDIR /usr/src/app
+WORKDIR /usr/src/app/
 
 RUN apk update
 
