@@ -6,7 +6,7 @@ module.exports = class DockerRunner extends EventEmitter{
         this.args = ["run"]
         this.args.push("-w","/usr/src/app")
         this.args.push("--name", id)
-        this.args.push("-v", `${config.directory}/src/run/${id}/:/usr/src/app`)
+        this.args.push("-v", `${__dirname}/run/${id}/:/usr/src/app`)
         this.args.push(image)
         this.args.push("sh", "-c", commands.join("&&"))
     }
