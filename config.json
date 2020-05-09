@@ -16,8 +16,7 @@
                 "node prog.js"
             ]
         }
-    ]
-    },
+    ],
     "timeout": "500000",
     "container": {
         "limits": {
