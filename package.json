@@ -1,9 +1,13 @@
 {
     "dependencies": {
-        "apollo-server": "^2.13.0"
+        "apollo-server": "^2.13.0",
+        "gulp": "^4.0.2"
     },
     "scripts": {
         "start": "node src/index.js",
         "build": "node src/dockerfiles/init.js"
+    },
+    "devDependencies": {
+        "browser-sync": "^2.26.7"
     }
 }

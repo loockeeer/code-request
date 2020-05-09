@@ -8,27 +8,44 @@
   <title>Code Request</title>
   <meta name="description" content="Code Request">
   <meta name="author" content="Loockeeer">
-
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
+  </style>
+  <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
   <link rel="stylesheet" href="styles.css">
 
 </head>
 
 <body>
-    <header class="header">
-        <div class="logo">
-            Code Request
-        </div>
-        <nav class="menu">
-            <a>API</a>
-            <a>Docs</a>
-        </nav>
-    </header>
-    <section class="main">
-        <div class="project">
-            <h1 class="title">Code Request</h1>
-            <h3><span class="graphql">GraphQL</span>, <span class="rest">REST</span>. <span class="docker">Docker</span>. Request your <span class="run">run</span></h3>
-        </div
-    </section>
+  <header class="header">
+    <div class="logo">
+      <div>Code Request</div>
+    </div>
+    <div class="nav">
+      <a href="http://docs.coderequest.tk">
+        <div>Docs</div>
+      </a>
+      <a href="https://github.com/loockeeer/code-request">
+        <div>Github</div>
+      </a>
+    </div>
+  </header>
+  <section class="main">
+
+    <div class="project">
+      <div class="text">
+        <h1 class="title">Code Request</h1>
+        <h3><span class="graphql">GraphQL</span>, <span class="rest">REST</span>. <span class="docker">Docker</span>. Request your run</h3>
+      </div>
+      <div class="exemple">
+        <pre class="prettyprint">fetch("http://api.coderequest.tk/rest?code=console.log('Hello World')&lang=js")</pre>
+        <pre class="prettyprint">
+fetch("http://api.coderequest.tk/graphql", {
+    method: 'post',
+    body: `{run(code: "console.log('Hello World')", lang:js)}`
+})</pre>
+      </div>
+  </section>
   <script src="index.js"></script>
 </body>
 
