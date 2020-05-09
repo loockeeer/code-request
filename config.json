@@ -7,14 +7,16 @@
         "port": 4267,
         "host": "0.0.0.0"
     },
-    "languages": {
-        "js": {
+    "languages": [
+        {
+            "name": "js",
             "image": "coderequest-js",
             "filename": "prog.js",
             "commands": [
                 "node prog.js"
             ]
         }
+    ]
     },
     "timeout": "500000",
     "container": {

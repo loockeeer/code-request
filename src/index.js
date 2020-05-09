@@ -19,8 +19,8 @@ type Query {
 
 const binds = new Map()
 
-for(const [lang, params] of Object.entries(config.languages)) {
-    binds.set(lang, new Bind(config, params))
+for(lang of config.languages) {
+    binds.set(lang.name, new Bind(config, lang))
 }
 
 console.log(`=> Loaded config`);
