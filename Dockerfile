@@ -1,4 +1,4 @@
-FROM node:current-alpine
+FROM node:latest
 
 COPY . /usr/src/app/
 
