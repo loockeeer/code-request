@@ -103,6 +103,7 @@ html, body {
 }
 
 .fadeInUp {
+    text-align: center;
   animation: 0.8s forwards fadeInUp;
   font-size: 19px;
 }
