@@ -47,7 +47,9 @@
   </section>
   <div id="languages">
   </div>
-  <script src="./index.js"></script>
+  <script>
+  class TextSlider{constructor(e,t,s){this.el=e,this.data=t,this.interval=s,this.index=-1}start(){this.intervalID=setInterval(()=>this.step(),this.interval)}stop(){clearInterval(this.intervalID)}step(){this.index++,this.index>=this.data.length&&(this.index=0),this.el.innerHTML=`<p class="fadeInUp ${this.data[this.index].customClasses.join(" ")}">${this.data[this.index].name}</p>`}}new Typing({time:60,id:"slug"}).write('<span class="graphql">GraphQL</span>, <span class="rest">REST</span>. <span class="docker">Docker</span>. Request your run'),new Typing({time:40,id:"codeone"}).write(PR.prettyPrintOne("fetch(\"http://api.coderequest.tk/rest?code=console.log('Hello World')&lang=js\")")).then(()=>{new Typing({time:40,id:"codetwo"}).write(PR.prettyPrintOne("\nfetch(\"http://api.coderequest.tk/graphql\", {\n    <br>\n        method: 'post',\n   <br>\n        body: `{run(code: \"console.log('Hello World')\", lang:js)}`\n   <br>\n})\n"))}),fetch("https://raw.githubusercontent.com/loockeeer/code-request/master/config.json").then(e=>e.json()).then(e=>{console.log(e);const t=e.languages.map(e=>({name:e.fullname,customClasses:[]}));new TextSlider(document.getElementById("languages"),t,1500).start()});
+  </script>
 </body>
 
 </html>
