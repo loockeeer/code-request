@@ -3,6 +3,8 @@ CodeRequest is an API (GraphQL & REST) which allows you to make call to execute 
 
 Code Runner API is open source, so you can contribute and use it for free.
 
-You can test it here : LIEN
+All the things you need to get your server up are here : https://docs.coderequest.tk
 
-All the things you need to get your server up are here : https://loockeeer.gitbook.io/code-request
+## Contributing
+You can contribute by adding support for other languages.
+Just read the docs, fork the repository, and make a Pull Request. 
