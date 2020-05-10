@@ -12,6 +12,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700&display=swap');
   </style>
   <script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+  <script src="https://camilleabella.github.io/Typing.js/typing/typing.js"></script>
   <link rel="stylesheet" href="styles.css">
 
 </head>
@@ -35,18 +36,18 @@
     <div class="project">
       <div class="text">
         <h1 class="title">Code Request</h1>
-        <h3><span class="graphql">GraphQL</span>, <span class="rest">REST</span>. <span class="docker">Docker</span>. Request your run</h3>
+        <h3 id="slug"></h3>
       </div>
       <div class="exemple">
-        <pre class="prettyprint">fetch("http://api.coderequest.tk/rest?code=console.log('Hello World')&lang=js")</pre>
-        <pre class="prettyprint">
-fetch("http://api.coderequest.tk/graphql", {
-    method: 'post',
-    body: `{run(code: "console.log('Hello World')", lang:js)}`
-})</pre>
+        <pre class="prettyprint" id="codeone"></pre>
+        <pre class="prettyprint" id="codetwo">
+</pre>
       </div>
+
   </section>
-  <script src="index.js"></script>
+  <div id="languages">
+  </div>
+  <script src="./index.js"></script>
 </body>
 
 </html>

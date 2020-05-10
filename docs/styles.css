@@ -52,28 +52,20 @@ html, body {
     background-color: #1c1c21;
 }
 
-.main {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: column;
 
-}
-
-.main .project {
+.project {
     color: white;
-    padding-top: 160px;
+    margin-top: 160px;
     display: flex;
     justify-content: space-evenly;
     align-items: baseline;
-    z-index: 1;
 }
 
-
-.main .project .text h1 {
+.project .text h1 {
     font-size: 64px
 }
 
-.main .project .text h3 {
+.project .text h3 {
     font-weight: normal;
 }
 
@@ -90,16 +82,42 @@ html, body {
 }
 
 
+.exemple {
+    animation: 1.6s forwards fadeInLeft;
+}
 
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translate(-300px,0)
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, 0)
+    }
+}
 
+#languages {
+    text-align: center;
+    margin-top: 50px
+}
 
+.fadeInUp {
+  animation: 0.8s forwards fadeInUp;
+  font-size: 19px;
+}
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(0,5px)
+  }
 
-
-
-
-
-
+  to {
+    opacity: 1;
+    transform: translate(0,-5px)
+  }
+}
 
 
 
