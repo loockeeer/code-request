@@ -8,7 +8,7 @@ const config = require('../config.json')
 const typeDefs = gql`
 
 enum Language {
-    ${Object.keys(config.languages)}
+    ${config.languages.map(l=>l.name)}
 }
 
 type Query {
