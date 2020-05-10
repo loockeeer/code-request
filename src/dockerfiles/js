@@ -1,1 +1,1 @@
-FROM node:current-alpine
+FROM node:latest

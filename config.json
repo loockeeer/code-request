@@ -15,6 +15,57 @@
             "commands": [
                 "node prog.js"
             ]
+        },
+        {
+            "name": "ruby",
+            "image": "coderequest-ruby",
+            "filename": "prog.rb",
+            "commands": [
+                "ruby prog.rb"
+            ]
+        },
+        {
+            "name": "python",
+            "image": "coderequest-python",
+            "filename": "prog.py",
+            "commands": [
+                "python3 prog.py"
+            ]
+        },
+        {
+            "name": "java",
+            "image": "coderequest-java",
+            "filename": "Main.java",
+            "commands": [
+                "javac Main.java",
+                "java Main"
+            ]
+        },
+        {
+            "name": "c_gcc",
+            "image": "coderequest-c_gcc",
+            "filename": "main.c",
+            "commands": [
+                "gcc -o main main.c",
+                "./main"
+            ]
+        },
+        {
+            "name": "cpp_gcc",
+            "image": "coderequest-cpp_gcc",
+            "filename": "main.cpp",
+            "commands": [
+                "g++ -o main -Wall main.cpp -O0",
+                "./main"
+            ]
+        },
+        {
+            "name": "golang",
+            "image": "coderequest-golang",
+            "filename": "main.go",
+            "commands": [
+                "go run main.go"
+            ]
         }
     ],
     "timeout": "500000",
