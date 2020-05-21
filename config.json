@@ -14,7 +14,7 @@
             "image": "coderequest-js",
             "filename": "prog.js",
             "commands": [
-                "time node prog.js"
+                "node prog.js"
             ]
         },
         {
@@ -23,7 +23,7 @@
             "image": "coderequest-ruby",
             "filename": "prog.rb",
             "commands": [
-                "time ruby prog.rb"
+                "ruby prog.rb"
             ]
         },
         {
@@ -32,7 +32,7 @@
             "image": "coderequest-python",
             "filename": "prog.py",
             "commands": [
-                "time python3 prog.py"
+                "python3 prog.py"
             ]
         },
         {
@@ -42,7 +42,7 @@
             "filename": "Main.java",
             "commands": [
                 "javac Main.java",
-                "time java Main"
+                "java Main"
             ]
         },
         {
@@ -52,7 +52,7 @@
             "filename": "main.c",
             "commands": [
                 "gcc -o main main.c",
-                "time ./main"
+                "./main"
             ]
         },
         {
@@ -62,7 +62,7 @@
             "filename": "main.cpp",
             "commands": [
                 "g++ -o main -Wall main.cpp -O0",
-                "time ./main"
+                "./main"
             ]
         },
         {
@@ -71,7 +71,7 @@
             "image": "coderequest-golang",
             "filename": "main.go",
             "commands": [
-                "time go run main.go"
+                "go run main.go"
             ]
         }
     ],
