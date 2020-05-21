@@ -1,5 +1,6 @@
 const { ApolloServer, gql } = require('apollo-server');
 const http = require('http');
+const url = require('url') ;
 
 const Bind = require('./Bind.js')
 
@@ -38,28 +39,35 @@ const resolvers = {
 }
 
 const restServer = http.createServer(async (req, res) => {
+    const pathname = url.parse(req.url).pathname
     const CORS = {"Access-Control-Allow-Origin": "*"}
-    const args = new URL(req.url, `http://${req.headers.host}`).searchParams;
-    const code = args.get('code')
-    const lang = args.get('lang')
-    if(!code) {
-        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
-        return res.end(JSON.stringify({code: 400, message: "Missing code"}))
-    }
-    if(!lang) {
-        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
-        return res.end(JSON.stringify({code: 400, message: "Missing lang"}))
-    }
-    console.log(lang)
-    const bind = binds.get(lang)
-    if(!bind)  {
-        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
-        return res.end(JSON.stringify({code: 400, message: "Bad lang"}))
-    }
+    if(pathname === "/") {
+        
+        const args = new URL(req.url, `http://${req.headers.host}`).searchParams;
+        const code = args.get('code')
+        const lang = args.get('lang')
+        if(!code) {
+            res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
+            return res.end(JSON.stringify({code: 400, message: "Missing code"}))
+        }
+        if(!lang) {
+            res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
+            return res.end(JSON.stringify({code: 400, message: "Missing lang"}))
+        }
+        console.log(lang)
+        const bind = binds.get(lang)
+        if(!bind)  {
+            res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
+            return res.end(JSON.stringify({code: 400, message: "Bad lang"}))
+        }
 
-    const result = await bind.run(code)
-    res.writeHead(200, {'Content-Type': 'text/json', ...CORS })
-    return res.end(JSON.stringify({code: 200, data: result}))
+        const result = await bind.run(code)
+        res.writeHead(200, {'Content-Type': 'text/json', ...CORS })
+        return res.end(JSON.stringify({code: 200, data: result}))
+    } else if(pathname==="/languages") {
+        res.writeHead(200, {'Content-Type': 'text/json', ...CORS })
+        return res.end(JSON.stringify({data: binds.keys()}))
+    }
 });
 
 const server = new ApolloServer({ cors: true, typeDefs, resolvers });
