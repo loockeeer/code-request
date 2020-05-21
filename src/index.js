@@ -47,18 +47,18 @@ const restServer = http.createServer(async (req, res) => {
         return res.end(JSON.stringify({code: 400, message: "Missing code"}))
     }
     if(!lang) {
-        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS } })
+        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
         return res.end(JSON.stringify({code: 400, message: "Missing lang"}))
     }
     console.log(lang)
     const bind = binds.get(lang)
     if(!bind)  {
-        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS } })
+        res.writeHead(400, { 'Content-Type': 'text/json', ...CORS })
         return res.end(JSON.stringify({code: 400, message: "Bad lang"}))
     }
 
     const result = await bind.run(code)
-    res.writeHead(200, {'Content-Type': 'text/json', ...CORS }})
+    res.writeHead(200, {'Content-Type': 'text/json', ...CORS })
     return res.end(JSON.stringify({code: 200, data: result}))
 });
 
