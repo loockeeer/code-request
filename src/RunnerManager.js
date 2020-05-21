@@ -42,9 +42,7 @@ module.exports = class RunnerManager extends EventEmitter{
             const output = `
 Exit code : ${code}
 ${sig === "SIGTERM" ? "Timed Out" : ""}
-
-Time : ${(Date.now() - this._startRun)/1000}s
-            `
+Total Time : ${(Date.now() - this._startRun)/1000}s`
             this.removeFolder()
             return this.emit('close', code, sig, this.stdout, this.stderr, this.fullData, output)
         })
