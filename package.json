@@ -1,6 +1,6 @@
 {
     "dependencies": {
-        "apollo-server": "^2.25.3",
+        "apollo-server": "^2.25.4",
         "gulp": "^4.0.2"
     },
     "scripts": {
